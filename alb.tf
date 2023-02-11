@@ -1,6 +1,6 @@
 module "alb" {
-  source     = "terraform-aws-modules/alb/aws"
-  version    = "~> 8.0"
+  source  = "terraform-aws-modules/alb/aws"
+  version = "~> 8.0"
 
   name                 = var.stack
   load_balancer_type   = "network"
@@ -23,14 +23,14 @@ module "alb" {
       backend_protocol = "TCP"
       backend_port     = var.ingress_node_port
       vpc_id           = data.aws_vpc.vpc.id
-#      health_check = {
-#        enabled             = true
-#        interval            = 3
-#        healthy_threshold   = 3
-#        unhealthy_threshold = 5
-#        timeout             = 2
-#        path = "/"
-#      }
+      #      health_check = {
+      #        enabled             = true
+      #        interval            = 3
+      #        healthy_threshold   = 3
+      #        unhealthy_threshold = 5
+      #        timeout             = 2
+      #        path = "/"
+      #      }
     }
   ]
 }
