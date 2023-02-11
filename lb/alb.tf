@@ -2,7 +2,7 @@ module "alb" {
   source  = "terraform-aws-modules/alb/aws"
   version = "~> 8.0"
 
-  name                 = var.stack
+  name                 = "${var.stack}-nlb"
   load_balancer_type   = "network"
   vpc_id               = data.aws_vpc.vpc.id
   subnets              = data.aws_subnets.lb_subnets.ids
@@ -36,14 +36,13 @@ module "alb" {
 }
 
 resource "kubernetes_manifest" "ingress-binding" {
-  depends_on = [helm_release.nginx_ingress_controller, helm_release.aws_lb_controller, module.alb]
   manifest = {
     "apiVersion" = "elbv2.k8s.aws/v1beta1"
     "kind"       = "TargetGroupBinding"
 
     metadata = {
       name      = "ingress-binding"
-      namespace = local.nginx_ingress_namespace
+      namespace = var.nginx_ingress_namespace
     }
     "spec" = {
       "serviceRef" = {

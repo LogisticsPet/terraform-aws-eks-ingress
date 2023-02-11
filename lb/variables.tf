@@ -1,5 +1,3 @@
-variable "region" {}
-
 variable "stack" {
   description = "stack name"
 }
@@ -19,17 +17,11 @@ variable "ingress_node_port" {
 }
 
 variable "tfe_organization" {
-  default = "Name of Terraform Cloud organization"
 }
 
 variable "tfe_eks_workspace_name" {
-  default = "Name of Terraform Cloud eks workspace"
 }
 
-variable "nginx_ingress_namespace" {
-  default = "kube-system"
-}
+variable "nginx_ingress_namespace" {}
 
-variable "nginx_ingress_name" {
-  default = "nginx-ingress"
-}
+variable "nginx_ingress_name" {}
