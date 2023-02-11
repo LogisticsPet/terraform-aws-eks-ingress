@@ -12,7 +12,7 @@ module "helm" {
 
 module "lb" {
   depends_on = [module.helm]
-  source = "./lb"
+  source     = "./lb"
 
   stack                   = var.stack
   domain                  = var.domain
