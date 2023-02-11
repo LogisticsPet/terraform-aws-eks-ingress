@@ -1,13 +1,8 @@
-locals {
-  nginx_ingress_name      = "nginx-ingress"
-  nginx_ingress_namespace = "kube-system"
-}
-
 resource "helm_release" "nginx_ingress_controller" {
   name              = "nginx-ingress-controller"
   repository        = "https://kubernetes.github.io/ingress-nginx"
   chart             = "ingress-nginx"
-  namespace         = local.nginx_ingress_namespace
+  namespace         = var.nginx_ingress_namespace
   atomic            = true
   dependency_update = true
   verify            = false
@@ -18,7 +13,7 @@ resource "helm_release" "nginx_ingress_controller" {
 
   values = [
     yamlencode({
-      fullnameOverride = local.nginx_ingress_name
+      fullnameOverride = var.nginx_ingress_service_name
       controller = {
         service = {
           type = "NodePort"
