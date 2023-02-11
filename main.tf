@@ -12,7 +12,7 @@ module "helm" {
 
 module "lb" {
   depends_on = [module.helm]
-  source = "./lb"
+  source     = "./lb"
 
   tfe_organization        = var.tfe_organization
   tfe_eks_workspace_name  = var.tfe_eks_workspace_name
