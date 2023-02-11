@@ -14,8 +14,6 @@ module "lb" {
   depends_on = [module.helm]
   source = "./lb"
 
-  tfe_organization        = var.tfe_organization
-  tfe_eks_workspace_name  = var.tfe_eks_workspace_name
   stack                   = var.stack
   domain                  = var.domain
   nginx_ingress_name      = var.nginx_ingress_name
