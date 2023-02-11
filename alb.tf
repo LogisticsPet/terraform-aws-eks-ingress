@@ -5,7 +5,7 @@ module "alb" {
   name                 = var.stack
   load_balancer_type   = "network"
   vpc_id               = data.aws_vpc.vpc.id
-  subnets              = data.aws_subnets.lb_subnets
+  subnets              = data.aws_subnets.lb_subnets.ids
   preserve_host_header = true
 
   https_listeners = [
