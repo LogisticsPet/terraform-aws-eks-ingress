@@ -28,9 +28,11 @@ data "aws_acm_certificate" "acm_certificate" {
 
 data "terraform_remote_state" "eks" {
   backend = "remote"
+
   config = {
+    organization = var.tfe_organization
     workspaces = {
-      name = "${var.stack}-eks"
+      name = var.tfe_eks_workspace_name
     }
   }
 }

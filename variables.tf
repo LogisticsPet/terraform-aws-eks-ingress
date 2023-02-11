@@ -17,3 +17,11 @@ variable "domain" {
 variable "ingress_node_port" {
   description = "Node port of nginx ingress for NLB to proxy traffic to"
 }
+
+variable "tfe_organization" {
+  default = "Name of Terraform Cloud organization"
+}
+
+variable "tfe_eks_workspace_name" {
+  default = "Name of Terraform Cloud eks workspace"
+}
