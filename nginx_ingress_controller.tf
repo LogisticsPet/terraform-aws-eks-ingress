@@ -28,7 +28,7 @@ resource "helm_release" "nginx_ingress_controller" {
             "service.beta.kubernetes.io/aws-load-balancer-nlb-target-type" = "ip"
             "service.beta.kubernetes.io/aws-load-balancer-ip-address-type"= "ipv4"
             "service.beta.kubernetes.io/aws-load-balancer-scheme"= "internet-facing"
-            "service.beta.kubernetes.io/aws-load-balancer-additional-resource-tags" = "Name:${var.stack}-lb"
+            "service.beta.kubernetes.io/aws-load-balancer-additional-resource-tags" = "Name=${var.stack}-lb"
           }
 
 #          https://kubernetes-sigs.github.io/aws-load-balancer-controller/v2.3/guide/service/annotations/
