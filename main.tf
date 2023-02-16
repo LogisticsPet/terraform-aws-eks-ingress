@@ -33,8 +33,6 @@ resource "helm_release" "nginx_ingress_controller" {
             "service.beta.kubernetes.io/aws-load-balancer-scheme"                   = "internet-facing"
             "service.beta.kubernetes.io/aws-load-balancer-additional-resource-tags" = "Name=${var.stack}-lb"
           }
-
-          #          https://kubernetes-sigs.github.io/aws-load-balancer-controller/v2.3/guide/service/annotations/
         }
       }
     })
