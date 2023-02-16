@@ -19,6 +19,9 @@ resource "helm_release" "nginx_ingress_controller" {
       controller = {
         kind = var.nginx_ingress_kind
         service = {
+          targetPorts = {
+            https = "80"
+          }
           annotations = {
             "service.beta.kubernetes.io/aws-load-balancer-backend-protocol" =  "http"
             "service.beta.kubernetes.io/aws-load-balancer-proxy-protocol" = "*"
