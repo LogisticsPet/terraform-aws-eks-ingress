@@ -1,10 +1,10 @@
 variable "stack" {
-  type = string
+  type        = string
   description = "Stack name"
 }
 
 variable "nginx_ingress_namespace" {
-  type = string
+  type        = string
   description = "Namespace where nginx ingress will be deployed to"
   default     = "nginx-ingress"
 }
@@ -15,12 +15,12 @@ variable "domain" {
 }
 
 variable "nginx_ingress_kind" {
-  type = string
+  type        = string
   description = "Kind of Nginx ingress controller"
   default     = "Deployment"
 
   validation {
-    condition = contains(["Deployment", "DaemonSet"], var.nginx_ingress_kind)
+    condition     = contains(["Deployment", "DaemonSet"], var.nginx_ingress_kind)
     error_message = "Kind can be either Deployment or DaemonSet"
   }
 }
