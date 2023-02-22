@@ -33,10 +33,9 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_domain"></a> [domain](#input\_domain) | Root application domain name | `string` | n/a | yes |
-| <a name="input_nginx_ingress_kind"></a> [nginx\_ingress\_kind](#input\_nginx\_ingress\_kind) | Kind of Nginx ingress controller. Can be Deployment/DaemonSet | `string` | `"Deployment"` | no |
+| <a name="input_nginx_ingress_kind"></a> [nginx\_ingress\_kind](#input\_nginx\_ingress\_kind) | Kind of Nginx ingress controller | `string` | `"Deployment"` | no |
 | <a name="input_nginx_ingress_namespace"></a> [nginx\_ingress\_namespace](#input\_nginx\_ingress\_namespace) | Namespace where nginx ingress will be deployed to | `string` | `"nginx-ingress"` | no |
-| <a name="input_region"></a> [region](#input\_region) | n/a | `any` | n/a | yes |
-| <a name="input_stack"></a> [stack](#input\_stack) | Stack name | `any` | n/a | yes |
+| <a name="input_stack"></a> [stack](#input\_stack) | Stack name | `string` | n/a | yes |
 
 ## Outputs
 
