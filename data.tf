@@ -3,7 +3,7 @@ locals {
 }
 
 data "aws_acm_certificate" "acm_certificate" {
-  domain = var.domain
+  domain = "*.${var.domain}"
 }
 
 data "aws_eks_cluster" "eks_cluster" {
