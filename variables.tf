@@ -14,9 +14,9 @@ variable "nginx_ingress_namespace" {
   default     = "nginx-ingress"
 }
 
-variable "domain" {
+variable "certificate_arn" {
   type        = string
-  description = "Root application domain name"
+  description = "ARN of SSL ertificate"
 }
 
 variable "nginx_ingress_kind" {

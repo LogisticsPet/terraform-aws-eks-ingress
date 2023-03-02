@@ -16,8 +16,8 @@ resource "helm_release" "nginx_ingress_controller" {
   values = [
     yamlencode({
       fullnameOverride = "nginx-ingress"
-      controller = {
-        kind = var.nginx_ingress_kind
+      controller       = {
+        kind    = var.nginx_ingress_kind
         service = {
           targetPorts = {
             https = "80"
@@ -25,7 +25,7 @@ resource "helm_release" "nginx_ingress_controller" {
           annotations = {
             "service.beta.kubernetes.io/aws-load-balancer-backend-protocol" = "http"
             "service.beta.kubernetes.io/aws-load-balancer-proxy-protocol"   = "*"
-            "service.beta.kubernetes.io/aws-load-balancer-ssl-cert"         = data.aws_acm_certificate.acm_certificate.arn
+            "service.beta.kubernetes.io/aws-load-balancer-ssl-cert"         = var.certificate_arn
             "service.beta.kubernetes.io/aws-load-balancer-ssl-ports"        = "443"
             "service.beta.kubernetes.io/aws-load-balancer-type"             = "nlb"
             "service.beta.kubernetes.io/aws-load-balancer-nlb-target-type"  = "ip"
