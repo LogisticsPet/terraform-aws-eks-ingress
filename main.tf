@@ -1,9 +1,16 @@
+locals {
+  lb_name = "${var.stack}-lb-${random_string.lb_suffix.result}"
+}
+
 resource "kubernetes_namespace" "nginx_ingress" {
   metadata {
     name = var.nginx_ingress_namespace
   }
 }
 
+resource "random_string" "lb_suffix" {
+  length = 6
+}
 resource "helm_release" "nginx_ingress_controller" {
   name              = "nginx-ingress-controller"
   repository        = "https://kubernetes.github.io/ingress-nginx"
@@ -31,7 +38,7 @@ resource "helm_release" "nginx_ingress_controller" {
             "service.beta.kubernetes.io/aws-load-balancer-nlb-target-type"  = "ip"
             "service.beta.kubernetes.io/aws-load-balancer-ip-address-type"  = "ipv4"
             "service.beta.kubernetes.io/aws-load-balancer-scheme"           = "internet-facing"
-            "service.beta.kubernetes.io/aws-load-balancer-name"             = "${var.stack}-lb"
+            "service.beta.kubernetes.io/aws-load-balancer-additional-resource-tags" = "Name=${local.lb_name}"
           }
         }
       }
@@ -41,5 +48,5 @@ resource "helm_release" "nginx_ingress_controller" {
 
 data "aws_lb" "lb" {
   depends_on = [helm_release.nginx_ingress_controller]
-  name       = "${var.stack}-lb"
+  Name = local.lb_name
 }

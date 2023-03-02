@@ -22,7 +22,7 @@ variable "certificate_arn" {
 variable "nginx_ingress_kind" {
   type        = string
   description = "Kind of Nginx ingress controller"
-  default     = "DaemonSet"
+  default     = "Deployment"
 
   validation {
     condition     = contains(["Deployment", "DaemonSet"], var.nginx_ingress_kind)
