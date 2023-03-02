@@ -10,6 +10,7 @@ resource "kubernetes_namespace" "nginx_ingress" {
 
 resource "random_string" "lb_suffix" {
   length = 6
+  min_special = 0
 }
 resource "helm_release" "nginx_ingress_controller" {
   name              = "nginx-ingress-controller"
