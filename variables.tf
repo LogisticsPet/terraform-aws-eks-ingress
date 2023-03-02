@@ -3,15 +3,20 @@ variable "stack" {
   description = "Stack name"
 }
 
+variable "cluster_name" {
+  type        = string
+  description = "Name of EKS cluster"
+}
+
 variable "nginx_ingress_namespace" {
   type        = string
   description = "Namespace where nginx ingress will be deployed to"
   default     = "nginx-ingress"
 }
 
-variable "domain" {
+variable "certificate_arn" {
   type        = string
-  description = "Root application domain name"
+  description = "ARN of SSL ertificate"
 }
 
 variable "nginx_ingress_kind" {
