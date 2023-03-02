@@ -4,7 +4,7 @@ variable "stack" {
 }
 
 variable "cluster_name" {
-  type = string
+  type        = string
   description = "Name of EKS cluster"
 }
 
