@@ -16,8 +16,8 @@ resource "helm_release" "nginx_ingress_controller" {
   values = [
     yamlencode({
       fullnameOverride = "nginx-ingress"
-      controller       = {
-        kind    = var.nginx_ingress_kind
+      controller = {
+        kind = var.nginx_ingress_kind
         service = {
           targetPorts = {
             https = "80"
