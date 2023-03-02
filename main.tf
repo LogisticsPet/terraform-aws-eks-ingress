@@ -31,10 +31,15 @@ resource "helm_release" "nginx_ingress_controller" {
             "service.beta.kubernetes.io/aws-load-balancer-nlb-target-type"          = "ip"
             "service.beta.kubernetes.io/aws-load-balancer-ip-address-type"          = "ipv4"
             "service.beta.kubernetes.io/aws-load-balancer-scheme"                   = "internet-facing"
-            "service.beta.kubernetes.io/aws-load-balancer-additional-resource-tags" = "Name=${var.stack}-lb"
+            "service.beta.kubernetes.io/aws-load-balancer-name" = "${var.stack}-lb"
           }
         }
       }
     })
   ]
+}
+
+data "aws_lb" "lb" {
+  depends_on = [helm_release.nginx_ingress_controller]
+  name = "${var.stack}-lb"
 }
