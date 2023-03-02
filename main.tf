@@ -48,5 +48,7 @@ resource "helm_release" "nginx_ingress_controller" {
 
 data "aws_lb" "lb" {
   depends_on = [helm_release.nginx_ingress_controller]
-  Name       = local.lb_name
+  tags = {
+    Name = local.lb_name
+  }
 }
