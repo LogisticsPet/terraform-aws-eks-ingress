@@ -9,7 +9,7 @@ resource "kubernetes_namespace" "nginx_ingress" {
 }
 
 resource "random_string" "lb_suffix" {
-  length = 6
+  length  = 6
   special = false
 }
 resource "helm_release" "nginx_ingress_controller" {
