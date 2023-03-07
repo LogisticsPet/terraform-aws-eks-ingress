@@ -29,3 +29,8 @@ variable "oidc_provider_arn" {
   type        = string
   description = "OIDC provider arn"
 }
+
+variable "version" {
+  type    = string
+  default = "4.2.5"
+}
