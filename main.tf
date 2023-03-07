@@ -12,7 +12,6 @@ resource "helm_release" "aws_lb_controller" {
   name              = "aws-load-balancer-controller"
   repository        = "https://aws.github.io/eks-charts"
   chart             = "aws-load-balancer-controller"
-  version           = var.version
   namespace         = var.namespace
   atomic            = true
   dependency_update = true
@@ -36,6 +35,7 @@ resource "helm_release" "nginx_ingress_controller" {
   name              = "nginx-ingress-controller"
   repository        = "https://kubernetes.github.io/ingress-nginx"
   chart             = "ingress-nginx"
+  version           = var.chart_version
   namespace         = var.namespace
   atomic            = true
   dependency_update = true
