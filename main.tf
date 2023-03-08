@@ -46,9 +46,6 @@ resource "helm_release" "nginx_ingress_controller" {
       fullnameOverride = "nginx-ingress"
       controller = {
         kind = var.nginx_ingress_kind
-        publishService = {
-          enabled = true
-        }
         service = {
           annotations = {
             "service.beta.kubernetes.io/aws-load-balancer-name"            = local.lb_name
