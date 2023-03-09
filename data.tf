@@ -7,3 +7,8 @@ data "aws_eks_cluster_auth" "eks_cluster_auth" {
 }
 
 data "aws_region" "current" {}
+
+data "aws_lb" "lb" {
+  depends_on = [helm_release.nginx_ingress_controller]
+  name       = local.lb_name
+}

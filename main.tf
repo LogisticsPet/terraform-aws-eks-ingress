@@ -46,6 +46,9 @@ resource "helm_release" "nginx_ingress_controller" {
       fullnameOverride = "nginx-ingress"
       controller = {
         kind = var.nginx_ingress_kind
+        extraArgs = {
+          enable-ssl-passthrough = "true"
+        }
         service = {
           annotations = {
             "service.beta.kubernetes.io/aws-load-balancer-name"            = local.lb_name
@@ -58,9 +61,4 @@ resource "helm_release" "nginx_ingress_controller" {
       }
     })
   ]
-}
-
-data "aws_lb" "lb" {
-  depends_on = [helm_release.nginx_ingress_controller]
-  name       = local.lb_name
 }
