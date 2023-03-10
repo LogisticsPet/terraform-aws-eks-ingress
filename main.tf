@@ -47,7 +47,7 @@ resource "helm_release" "nginx_ingress_controller" {
       controller = {
         kind = var.nginx_ingress_kind
         extraArgs = {
-          enable-ssl-passthrough = "true"
+          "--enable-ssl-passthrough" = "true"
         }
         service = {
           annotations = {
