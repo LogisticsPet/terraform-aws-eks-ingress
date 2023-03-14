@@ -63,7 +63,7 @@ resource "helm_release" "nginx_ingress_controller" {
 
 resource "kubernetes_config_map" "nginx_config" {
   metadata {
-    name = "nginx-ingress-configmap"
+    name      = "nginx-ingress-configmap"
     namespace = var.namespace
   }
   data = {
