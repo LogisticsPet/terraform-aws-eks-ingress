@@ -35,7 +35,6 @@ resource "helm_release" "nginx_ingress_controller" {
   name              = "nginx-ingress-controller"
   repository        = "https://kubernetes.github.io/ingress-nginx"
   chart             = "ingress-nginx"
-  version           = var.chart_version
   namespace         = var.namespace
   atomic            = true
   dependency_update = true
@@ -47,12 +46,11 @@ resource "helm_release" "nginx_ingress_controller" {
       controller = {
         kind = var.nginx_ingress_kind
         extraArgs = {
-          enable-ssl-passthrough = "true"
+          "enable-ssl-passthrough" = "true"
         }
         service = {
           annotations = {
             "service.beta.kubernetes.io/aws-load-balancer-name"            = local.lb_name
-            "service.beta.kubernetes.io/aws-load-balancer-proxy-protocol"  = "*"
             "service.beta.kubernetes.io/aws-load-balancer-type"            = "nlb-ip"
             "service.beta.kubernetes.io/aws-load-balancer-nlb-target-type" = "ip"
             "service.beta.kubernetes.io/aws-load-balancer-scheme"          = "internet-facing"
@@ -61,4 +59,14 @@ resource "helm_release" "nginx_ingress_controller" {
       }
     })
   ]
+}
+
+resource "kubernetes_config_map" "nginx_config" {
+  metadata {
+    name      = "nginx-ingress-configmap"
+    namespace = var.namespace
+  }
+  data = {
+    "error-log-level" = "info"
+  }
 }

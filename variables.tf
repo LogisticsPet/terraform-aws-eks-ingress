@@ -29,8 +29,3 @@ variable "oidc_provider_arn" {
   type        = string
   description = "OIDC provider arn"
 }
-
-variable "chart_version" {
-  type    = string
-  default = "4.2.5"
-}
