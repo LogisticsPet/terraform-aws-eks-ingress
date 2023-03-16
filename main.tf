@@ -23,7 +23,7 @@ resource "helm_release" "aws_lb_controller" {
       fullnameOverride = "aws-lb-controller"
       clusterName      = var.cluster_name
       region           = data.aws_region.current.name
-      serviceAccount   = {
+      serviceAccount = {
         create = false
         name   = kubernetes_service_account.service-account.metadata[0].name
       }
@@ -44,8 +44,8 @@ resource "helm_release" "nginx_ingress_controller" {
   values = [
     yamlencode({
       fullnameOverride = "nginx-ingress"
-      controller       = {
-        kind      = var.nginx_ingress_kind
+      controller = {
+        kind = var.nginx_ingress_kind
         extraArgs = {
           "enable-ssl-passthrough" = "true"
         }
