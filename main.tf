@@ -9,6 +9,7 @@ resource "random_string" "lb_suffix" {
 }
 
 resource "helm_release" "aws_lb_controller" {
+  depends_on        = [module.lb_role]
   name              = "aws-load-balancer-controller"
   repository        = "https://aws.github.io/eks-charts"
   chart             = "aws-load-balancer-controller"
