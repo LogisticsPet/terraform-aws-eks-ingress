@@ -47,8 +47,5 @@ No requirements.
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
-| <a name="output_lb_arn"></a> [lb\_arn](#output\_lb\_arn) | ARN of LB created by ingress controller |
-| <a name="output_lb_dns_name"></a> [lb\_dns\_name](#output\_lb\_dns\_name) | DNS name of LB created by ingress controller |
+No outputs.
 <!-- END_TF_DOCS -->
