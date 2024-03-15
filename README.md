@@ -10,7 +10,7 @@ Terraform module to install AWS and NGINX ingress controllers
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | 5.40.0 |
 | <a name="requirement_helm"></a> [helm](#requirement\_helm) | 2.9.0 |
 | <a name="requirement_kubernetes"></a> [kubernetes](#requirement\_kubernetes) | 2.18.1 |
-| <a name="requirement_random"></a> [random](#requirement\_random) | 3.4.3 |
+| <a name="requirement_random"></a> [random](#requirement\_random) | 3.6.0 |
 
 ## Providers
 
@@ -19,7 +19,7 @@ Terraform module to install AWS and NGINX ingress controllers
 | <a name="provider_aws"></a> [aws](#provider\_aws) | 5.40.0 |
 | <a name="provider_helm"></a> [helm](#provider\_helm) | 2.9.0 |
 | <a name="provider_kubernetes"></a> [kubernetes](#provider\_kubernetes) | 2.18.1 |
-| <a name="provider_random"></a> [random](#provider\_random) | 3.4.3 |
+| <a name="provider_random"></a> [random](#provider\_random) | 3.6.0 |
 
 ## Modules
 
@@ -35,7 +35,7 @@ Terraform module to install AWS and NGINX ingress controllers
 | [helm_release.nginx_ingress_controller](https://registry.terraform.io/providers/hashicorp/helm/2.9.0/docs/resources/release) | resource |
 | [kubernetes_config_map.nginx_config](https://registry.terraform.io/providers/hashicorp/kubernetes/2.18.1/docs/resources/config_map) | resource |
 | [kubernetes_service_account.service-account](https://registry.terraform.io/providers/hashicorp/kubernetes/2.18.1/docs/resources/service_account) | resource |
-| [random_string.lb_suffix](https://registry.terraform.io/providers/hashicorp/random/3.4.3/docs/resources/string) | resource |
+| [random_string.lb_suffix](https://registry.terraform.io/providers/hashicorp/random/3.6.0/docs/resources/string) | resource |
 | [aws_eks_cluster.eks_cluster](https://registry.terraform.io/providers/hashicorp/aws/5.40.0/docs/data-sources/eks_cluster) | data source |
 | [aws_eks_cluster_auth.eks_cluster_auth](https://registry.terraform.io/providers/hashicorp/aws/5.40.0/docs/data-sources/eks_cluster_auth) | data source |
 | [aws_lb.lb](https://registry.terraform.io/providers/hashicorp/aws/5.40.0/docs/data-sources/lb) | data source |
