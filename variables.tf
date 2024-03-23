@@ -4,6 +4,11 @@ variable "stack" {
   default     = "dev"
 }
 
+variable "cluster_name" {
+  type        = string
+  description = "Name of EKS cluster"
+}
+
 variable "namespace" {
   type        = string
   description = "Namespace where nginx ingress and AWS LB Controller will be deployed to"
