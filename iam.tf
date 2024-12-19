@@ -3,7 +3,8 @@ locals {
 }
 
 module "lb_role" {
-  source = "terraform-aws-modules/iam/aws//modules/iam-role-for-service-accounts-eks"
+  source  = "terraform-aws-modules/iam/aws//modules/iam-role-for-service-accounts-eks"
+  version = "5.48.0"
 
   role_name                                                       = "${var.stack}_aws_lb_controller"
   attach_load_balancer_controller_policy                          = true

@@ -29,7 +29,7 @@ Terraform module to install AWS and NGINX ingress controllers
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_lb_role"></a> [lb\_role](#module\_lb\_role) | terraform-aws-modules/iam/aws//modules/iam-role-for-service-accounts-eks | n/a |
+| <a name="module_lb_role"></a> [lb\_role](#module\_lb\_role) | terraform-aws-modules/iam/aws//modules/iam-role-for-service-accounts-eks | 5.48.0 |
 
 ## Resources
 
@@ -40,9 +40,6 @@ Terraform module to install AWS and NGINX ingress controllers
 | [kubernetes_config_map.nginx_config](https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/config_map) | resource |
 | [kubernetes_service_account.service-account](https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/service_account) | resource |
 | [random_string.lb_suffix](https://registry.terraform.io/providers/hashicorp/random/3.6.3/docs/resources/string) | resource |
-| [aws_eks_cluster.eks_cluster](https://registry.terraform.io/providers/hashicorp/aws/5.81.0/docs/data-sources/eks_cluster) | data source |
-| [aws_eks_cluster_auth.eks_cluster_auth](https://registry.terraform.io/providers/hashicorp/aws/5.81.0/docs/data-sources/eks_cluster_auth) | data source |
-| [aws_lb.lb](https://registry.terraform.io/providers/hashicorp/aws/5.81.0/docs/data-sources/lb) | data source |
 | [aws_region.current](https://registry.terraform.io/providers/hashicorp/aws/5.81.0/docs/data-sources/region) | data source |
 
 ## Inputs
