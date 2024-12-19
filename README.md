@@ -1,3 +1,5 @@
+# Deprecated in favour of ArgoCD ApplicationSet
+
 ![ci](https://github.com/LogisticsPet/terraform-aws-eks-ingress/actions/workflows/ci.yml/badge.svg?branch=main)
 ![lint](https://github.com/LogisticsPet/terraform-aws-eks-ingress/actions/workflows/lint.yml/badge.svg?branch=main)
 ![sec](https://github.com/LogisticsPet/terraform-aws-eks-ingress/actions/workflows/tfsec.yml/badge.svg?branch=main)
