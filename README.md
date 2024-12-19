@@ -20,6 +20,7 @@ Terraform module to install AWS and NGINX ingress controllers
 
 | Name | Version |
 |------|---------|
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.81.0 |
 | <a name="provider_helm"></a> [helm](#provider\_helm) | 2.16.1 |
 | <a name="provider_kubernetes"></a> [kubernetes](#provider\_kubernetes) | 2.35.0 |
 | <a name="provider_random"></a> [random](#provider\_random) | 3.6.3 |
@@ -39,6 +40,7 @@ Terraform module to install AWS and NGINX ingress controllers
 | [kubernetes_config_map.nginx_config](https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/config_map) | resource |
 | [kubernetes_service_account.service-account](https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/service_account) | resource |
 | [random_string.lb_suffix](https://registry.terraform.io/providers/hashicorp/random/3.6.3/docs/resources/string) | resource |
+| [aws_region.current](https://registry.terraform.io/providers/hashicorp/aws/5.81.0/docs/data-sources/region) | data source |
 
 ## Inputs
 
