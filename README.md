@@ -28,7 +28,7 @@ Terraform module to install AWS and NGINX ingress controllers
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_lb_role"></a> [lb\_role](#module\_lb\_role) | terraform-aws-modules/iam/aws//modules/iam-role-for-service-accounts-eks | n/a |
+| <a name="module_lb_role"></a> [lb\_role](#module\_lb\_role) | terraform-aws-modules/iam/aws//modules/iam-role-for-service-accounts-eks | 5.48.0 |
 
 ## Resources
 
